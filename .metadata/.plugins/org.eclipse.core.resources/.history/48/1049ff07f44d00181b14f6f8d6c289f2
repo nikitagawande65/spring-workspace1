@@ -1,0 +1,16 @@
+package com.myapp.spring;
+import grails.gorm.annotation.Entity
+import.grails.mongodb.MongoEntity
+@Entity
+class Customer implements MongoEntity<Customer>{
+
+long id;
+
+String firstname;
+
+String lastName;
+
+String city;
+
+String email;
+}

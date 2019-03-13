@@ -1,0 +1,5 @@
+package com.myapp.spring.doman;
+
+public class Order {
+
+}

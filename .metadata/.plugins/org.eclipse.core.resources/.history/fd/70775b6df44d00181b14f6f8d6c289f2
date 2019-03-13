@@ -1,0 +1,41 @@
+package com.myapp.spring;
+
+import grails.gorm.transactions.ReadOnly
+import groovy.transform.CompileStatic
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.web.bind.annotation.*
+
+
+@RestController
+@CompileStatic
+class CustomerController {
+
+@Autowired
+CustomerService customerService
+
+@RequestMapping("/customer")
+@ReadOnly
+List<Customer> customers() {
+Customer.list()
+}
+
+@RequestMapping("/customer/{firstName}/{lastName}")
+@ReadOnly
+List<Customer> customer(@PathVariable("firstName")String firstName,@PathVariable("lastName")String lastName)
+ {
+customerService.findByFirstNameAndLastName(firstName,lastName)
+}
+@RequestMapping(value="/customers",method=RequestMethod.POST)
+String save(@RequestBody Customer customer)
+{
+customer.save()
+}
+@RequestMapping("/customer/{id}")
+@ReadOnly
+Customer  customers(@PathVariable("id) long id) {
+Customer.get(id);
+}
+
+
+
+}   

@@ -1,0 +1,62 @@
+package com.myapp.spring.doman;
+
+import java.util.Date;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.myapp.spring.client.Customer;
+
+@Document
+public class Item {
+	
+	@Id
+	private long id;
+	private Date orderDate;
+	private double orderValue;
+	
+	private Customer customer;
+	
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+
+	public Item() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	public Item(long id, Date orderDate, double orderValue) {
+		this.id = id;
+		this.orderDate = orderDate;
+		this.orderValue = orderValue;
+	}
+
+
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public Date getOrderDate() {
+		return orderDate;
+	}
+	public void setOrderDate(Date orderDate) {
+		this.orderDate = orderDate;
+	}
+	public double getOrderValue() {
+		return orderValue;
+	}
+	public void setOrderValue(double orderValue) {
+		this.orderValue = orderValue;
+	}
+
+}

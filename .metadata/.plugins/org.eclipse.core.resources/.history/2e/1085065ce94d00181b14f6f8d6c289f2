@@ -1,0 +1,16 @@
+package com.myapp.spring.domain;
+import org.Springframework.data.mongodb.core.mapping.Document;
+@Document
+class Customer{
+
+@Id
+BigInteger id;
+
+String firstname;
+
+String lastName;
+
+String city;
+
+String email;
+}

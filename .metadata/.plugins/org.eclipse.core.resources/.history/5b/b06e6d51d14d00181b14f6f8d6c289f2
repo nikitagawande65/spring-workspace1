@@ -1,0 +1,17 @@
+package com.myapp.spring.dao;
+
+import java.util.List;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.myapp.spring.doman.Order;
+
+public interface OrderRepository extends MongoRepository<Order, Long>{
+
+	
+
+//	List<Order> findByName(String name);
+	
+	
+
+}

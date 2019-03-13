@@ -1,0 +1,5 @@
+FROM openjdk
+MAINTAINER Nikita <nikita@live.com>
+ADD target/order-ms0.0.1-SNAPSHOP.jar cloud-config-ms.jar
+ENTRYPOINT ["java","-jar","/cloud-config-ms.jar"]
+EXPOSE 8888

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="spring-cloud-config-server"/>
+<aop-project name="order-ms"/>
+<aop-project name="catalog-ms"/>
+<aop-project name="product-ms1"/>
+<aop-project name="spring-cloud-discovery-server-1"/>
+<aop-project name="customer-ms"/>
+<aop-project name="order-api-gateway-ms"/>
+</aop-reference-model>

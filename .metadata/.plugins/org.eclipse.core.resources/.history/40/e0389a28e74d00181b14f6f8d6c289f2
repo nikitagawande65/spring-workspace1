@@ -1,0 +1,16 @@
+package com.myapp.spring.domain;
+import org.Springframework.data.mongodb.core.mapping.Document;
+@Document
+class flight{
+
+@Id
+BigInteger id;
+
+String sourceCity;
+
+String destinationCity;
+
+double fare;
+
+double duration;
+}

@@ -1,0 +1,12 @@
+package com.myapp.spring;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import java.math.BigInt;
+import com.myapp.spring.Customer;
+import org.springframework.stereotype.Repository;
+
+@Repository
+interface CustomerRepository extends MongoRepository<Customer,Long>
+{
+
+
+}

@@ -1,0 +1,16 @@
+package com.myapp.spring.doman;
+
+import java.util.Date;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
+public class Order {
+	
+	@Id
+	private long id;
+	private Date orderDate;
+	private double orderValue;
+
+}

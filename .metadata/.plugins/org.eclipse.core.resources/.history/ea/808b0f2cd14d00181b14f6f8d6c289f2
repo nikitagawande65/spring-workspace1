@@ -1,0 +1,10 @@
+package com.myapp.spring.dao;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.myapp.spring.doman.Order;
+
+public interface OrderRepository extends MongoRepository<Order, Long>{
+	
+
+}

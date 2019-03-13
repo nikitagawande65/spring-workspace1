@@ -1,0 +1,6 @@
+FROM openjdk
+MAINTAINER Maitri <mtewar91@in.ibm.com>
+ADD target/cloud-config-server-0.0.1-SNAPSHOT.jar cloud-config-ms.jar
+ENTRYPOINT ["java", "-jar", "/cloud-config-ms.jar"]
+EXPOSE 8888
+ 

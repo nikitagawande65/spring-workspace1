@@ -1,0 +1,47 @@
+package com.myapp.spring.api;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.myapp.spring.dao.ProductRepository;
+import com.myapp.spring.domain.Product;
+
+@RestController
+public class ProductAPI {
+	
+	@Autowired
+	private ProductRepository productRepository;
+	
+	@GetMapping("/products")
+	public ResponseEntity<List<Product>> loadAll(){
+		return new ResponseEntity<List<Product>>
+		(productRepository.findAll(),HttpStatus.OK);
+		
+	}
+	@PostMapping("/products")
+	public ResponseEntity<String> addNewProduct(@RequestBody Product product){
+		productRepository.save(product);
+		return new ResponseEntity<String>("productAdded",HttpStatus.CREATED);
+	}
+	@GetMapping("/products/{name}")
+	public ResponseEntity<List<Product>> findByName(@PathVariable("name")String name){
+		return new ResponseEntity<List<Product>>
+		(productRepository.findByName(name),HttpStatus.OK);
+		
+	}
+	@GetMapping("/products/find/{price}")
+	public ResponseEntity<List<Product>> findByPrice(@PathVariable("price")double price){
+		return new ResponseEntity<List<Product>>
+		(productRepository.findByPrice(price),HttpStatus.OK);
+		
+	}
+
+}

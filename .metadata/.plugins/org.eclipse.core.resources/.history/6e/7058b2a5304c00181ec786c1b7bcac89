@@ -1,0 +1,5 @@
+package com.myapp.spring.domain;
+
+public class product {
+
+}

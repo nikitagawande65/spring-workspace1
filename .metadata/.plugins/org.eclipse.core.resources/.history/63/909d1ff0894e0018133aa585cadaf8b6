@@ -1,0 +1,22 @@
+package com.myapp.spring
+
+import org.springframework.boot.SpringApplication
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.cloud.netflix.eureka.*
+import grails.gorm.transactions.Transactional;
+import org.springframework.boot.CommandLineRunner
+
+@SpringBootApplication
+@EnableEurekaClient
+class CustomerMsApplication implements CommandLineRunner{
+
+	static void main(String[] args) {
+		SpringApplication.run CustomerMsApplication, args
+	}
+	@Override
+	@Transactional
+	void run(String... args)throws Exception{
+	new Customer(id:6,firstName:"Virat",lastName:"Kohli",
+	email:"virat@gmail.com",city:"pune").save()
+	}
+}
